@@ -1,0 +1,398 @@
+html {
+  height: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  padding: 0.5rem;
+  text-rendering: optimizeLegibility;
+}
+
+table {
+  position: relative;
+  align: center;
+  width: 100%;
+  height: 100%;
+}
+
+h2, legend {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 2.5vh;
+  text-align: center;
+}
+
+legend {
+	color: black;
+	text-shadow: 4px 4px 3px rgba(150, 150, 150, 1);
+}
+
+td, th {
+  width: 10%;
+  padding: 2px;
+  font-family: Arial;
+  text-align: center;
+  padding: 2px;
+  font-size: 2vh;
+  color:#030303;
+}
+
+th {
+  background: #B8C9FE;
+  border-color: white;
+  font-weight: lighter;
+}
+
+fieldset {
+  border: 1px solid white;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 7px 7px 20px 0px  rgba(0,0,0,0.3);
+}
+
+h3 {
+  font-family: Arial;
+  font-size: 2vh;
+  text-align: center;
+}
+
+h4 {
+  font-family: Arial;
+  font-size: 1.5vh;
+  text-align: center;
+}
+
+/*span e h5 reservados para o indice uv*/
+
+aviso {
+  animation: layerize cubic-bezier(0.4, 0, 0.2, 1) 700ms 200ms infinite alternate;
+  opacity: 0;
+  width: 100%;
+  color: #fff;
+  font: 500 80vmin "Arial", sans-serif;
+  cursor: default;
+  user-select: none;
+  text-align: center;
+  font-size: 8vw;
+}
+
+@keyframes layerize {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+    text-shadow: 0 0 transparent, 0em 0em rgba(255, 255, 255, 0.4), 0em 0em rgba(255, 255, 255, 0.3), 0em 0em rgba(255, 255, 255, 0.2), 0em 0em rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0.066666em, -0.066666em);
+    text-shadow: 0 0 transparent, 0.033333em 0.033333em rgba(255, 255, 255, 0.4), 0.066666em 0.066666em rgba(255, 255, 255, 0.3), 0.099999em 0.099999em rgba(255, 255, 255, 0.2), 0.133332em 0.133332em rgba(255, 255, 255, 0.1);
+  }
+}
+
+span {
+  font-family: Arial;
+  font-align: center;
+  font-size: 15vh;
+}
+
+h5 span{
+  font-family: Arial;
+  font-size: 2vw;
+  text-align: center;
+}
+
+.button {
+  background-color: AliceBlue;
+  color: Black;
+  border: 1px;
+  text-align: center;
+  font-size: 2vh;
+  transition-duration: 0.2s;
+  width: 100%;
+  height: 100%;
+}
+
+.button:hover {
+  background-color: Blue;
+  border: 2px;
+  color: Black;
+}
+
+.button-checked {
+  color: Blue;
+  font-size: 3vh;
+}
+
+.button-unchecked {
+  color: White;
+  font-size: 2vh;
+}
+
+.button-time-chart {
+  background-color: LightBlue;
+  border: 1px;
+  text-align: center;
+  font-size: 2vh;
+  transition-duration: 0.2s;
+  width: 100%;
+  padding: 2px;
+}
+
+.button-temp-chart {
+  background-color: rgba(255, 0, 0, 0.5);
+  border: 1px;
+  text-align: center;
+  font-size: 1vh;
+  transition-duration: 0.2s;
+  width: 100%;
+  padding: 2px;
+}
+
+.button-humi-chart {
+  background-color: rgba(0, 0, 255, 0.5);
+  border: 1px;
+  text-align: center;
+  font-size: 1vh;
+  transition-duration: 0.2s;
+  width: 100%;
+  padding: 2px;
+}
+
+.button-uv-chart {
+  background-color: rgba(192, 0, 255, 0.5);
+  border: 1px;
+  text-align: center;
+  font-size: 1vh;
+  transition-duration: 0.2s;
+  width: 100%;
+  padding: 2px;
+}
+
+.camera {
+  height: 45vh;
+}
+
+.gate {
+  border-radius: 8px;
+  padding: 0.5vw;
+}
+
+.gate-open {
+ background-image: radial-gradient(circle, #0da804, #37bd2f, #53d34c, #6be967, #83ff82);
+ }
+
+.gate-closed {
+   background-image: radial-gradient(circle, #f21b1b, #f73330, #fa4643, #fd5654, #ff6565);
+}
+
+.lens-box{
+  background-color: #FBF3B9;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.lens-alert-box{
+  position: relative;
+  width: 80%;
+  left: 10%;
+  padding: 1px;
+  border-radius: 8px;
+  background-color: #ff0099;
+  align: center;
+}
+
+.logo {
+  position: absolute;
+  left: 4%;
+  top: 2vh;
+}
+
+.side-box-properties {
+  text-align: center;
+  display: block;
+  position: absolute;
+  padding: 2px;
+  margin: 2px 2px;
+  width: 20%;
+}
+
+.center-box-properties {
+  text-align: center;
+  display: block;
+  position: absolute;
+  padding: 2px;
+  margin: 2px 2px;
+  width: 50%;
+}
+
+.box-1 {
+  top: 16vh;
+  left: 3%;
+}
+
+.box-2 {
+  top: 45vh;
+  left: 3%;
+}
+
+.box-3 {
+  top: 80vh;
+  left: 3%;
+}
+
+.box-4 {
+  top: 2vh;
+  right: 3%;
+}
+
+.box-5 {
+  top: 52vh;
+  right: 3%;
+}
+
+.box-6 {
+  top: 72vh;
+  right: 3%;
+}
+
+.box-7 {
+  top: 50vh;
+  right: 25%;
+}
+
+.box-camera {
+  background-color: Black;
+  top: 1vw;
+  left: 25%;
+}
+
+.box-alerta-gate {
+  position: relative;
+  width: 50%;
+  left: 25%;
+  padding: 1px;
+   border-radius: 100px;
+ background: radial-gradient(circle, #fb0404, #f92f04, #f84306, #f6520c, #f45f13);
+ /* background: radial-gradient(circle, #eb1212, #f0410b, #f55e07, #f8750a, #fb8b15);  */
+ }
+
+.portao {
+font: 100 30px/1 'Source Sans Pro', Arial, sans-serif; text-transform: uppercase; color: #fff; text-align: center; letter-spacing: -3px;
+text-shadow:     0 1px 0 hsl(174,5%,80%),
+	                 0 2px 0 hsl(174,5%,75%),
+	                 0 3px 0 hsl(174,5%,70%),
+	                 0 4px 0 hsl(174,5%,66%),
+	                 0 5px 0 hsl(174,5%,64%),
+	                 0 6px 0 hsl(174,5%,62%),
+	                 0 7px 0 hsl(174,5%,61%),
+	                 0 8px 0 hsl(174,5%,60%),
+
+	                 0 0 5px rgba(0,0,0,.05),
+	                0 1px 3px rgba(0,0,0,.2),
+	                0 3px 5px rgba(0,0,0,.2),
+	               0 5px 10px rgba(0,0,0,.2),
+	              0 10px 10px rgba(0,0,0,.2),
+	              0 20px 20px rgba(0,0,0,.3);
+ padding-bottom: 2%;
+}
+
+/*boxes do indice uv para aplicar condicionais*/
+
+.box-uv{
+  position: relative;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  padding: 0.5px;
+  border-radius: 8px;
+}
+
+.uv-index-1{
+  background-color: #4eb400;
+}
+
+.uv-index-2{
+  background-color: #a0ce00;
+}
+
+.uv-index-3{
+  background-color: #f7e400;
+}
+
+.uv-index-4{
+  background-color: #f8b600;
+}
+
+.uv-index-5{
+  background-color: #f88700;
+}
+
+.uv-index-6{
+  background-color: #f85900;
+}
+
+.uv-index-7{
+  background-color: #e82c0e;
+}
+
+.uv-index-8{
+  background-color: #d8001d;
+}
+
+.uv-index-9{
+  background-color: #ff0099;
+}
+
+.uv-index-10{
+  background-color: #b54cff;
+}
+
+.uv-index-11{
+  background-color: #998cff;
+}
+
+/*Previsão do tempo*/
+
+.weather-one {
+  background-color: #B9C9FB;
+  border-radius: 8px;
+  position: relative;
+  width: 100%;
+  height: 25%;
+  padding: 0.1vw;
+}
+
+.weather-two {
+  position: relative;
+  width: 100%;
+  height: 25%;
+}
+
+.weather-three {
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+
+.chart {
+  position: center;
+  width: 45vw;
+  height: 15vw;
+}
+
+.efeito {
+	color: #fff;
+	padding: 2%;
+	font-size: 1.5vw;
+	font-weight: bold;
+	font-family: Helvetica;
+	text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+#grad {
+  background: linear-gradient(0.5turn, #B9C9FB, #ebf8e1, #FBF3B9);
+}
+
+#grad-alert-days {
+  background: Yellow;
+}
