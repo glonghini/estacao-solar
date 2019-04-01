@@ -8,7 +8,7 @@ export const Lens = (props) => {
   if (myDate.getMonth() === 0){
     if (myDate.getDate() === 24 || myDate.getDate() === 25 || myDate.getDate() === 26 || myDate.getDate() === 27){
       return(<div className="lens-box">
-        <h3><p>Tempo total de exposição:</p></h3>
+        <table><tr><th>Tempo total de exposição:</th></tr></table>
         <div className="efeito">{props.time} horas</div>
         <h3> Atenção: girar o painel em direção ao sol no dia 27/01 </h3>
         <h3> Este aviso será mostrado até o dia 27 </h3>
@@ -31,7 +31,7 @@ export const Lens = (props) => {
     }
   }
   return(<div className="lens-box">
-    <h3><p>Tempo total de exposição:</p></h3>
+    <table><tbody><tr><th>Tempo total de exposição:</th></tr></tbody></table>
     <div className="efeito">{props.time} horas</div>
   </div>
   )

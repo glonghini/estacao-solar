@@ -129,7 +129,7 @@ export class Chart extends React.Component {
     //função para criar a matrix dos dados recebidos da API
     //ao fazer o GET na API, recebemos uma string com todos os dados. Precisamos transformar em um matriz.
     //primeiro, esvaziamos a matriz, pois ela é atrualizada a cada request
-    this.state.dataMatrixTempHumi.setState([]);
+    this.state.dataMatrixTempHumi = [];
 
     //o javascript conta o enter (\n) como um caracter, substituimos esses caracteres por tabs
     const myString = string.replace(/\n/g, '\t');
@@ -148,7 +148,7 @@ export class Chart extends React.Component {
     //função para criar a matrix dos dados recebidos da API
     //ao fazer o GET na API, recebemos uma string com todos os dados. Precisamos transformar em um matriz.
     //primeiro, esvaziamos a matriz, pois ela é atrualizada a cada request
-    this.state.dataMatrixUV.setState([]);
+    this.state.dataMatrixUV = [];
 
     //o javascript conta o enter (\n) como um caracter, substituimos esses caracteres por tabs
     const myString = string.replace(/\n/g, '\t');
@@ -164,6 +164,9 @@ export class Chart extends React.Component {
   }
   //função para criar os vetores com os dados a serem mostrados de acordo com a escala de tempo
   dataTimeScaleBuilder = (timeScale, dataName) => {
+    //matriz importada do state
+    var matrix = [];
+
     //vetores para receber os valores tratados
     const label = [];
     const data = [];
@@ -190,7 +193,7 @@ export class Chart extends React.Component {
     counter = 0;
     while (counter <= this.matrix.length-1) {
       if (this.matrix[counter][0].slice(0, 2) >= 5 && this.matrix[counter][0].slice(0, 2) <= 20) {
-        this.state.firstDaytimePosition.setState(counter);
+        this.state.firstDaytimePosition = counter;
         break;
       } else {
         counter++;
@@ -200,7 +203,7 @@ export class Chart extends React.Component {
     counter = 0;
     while (counter <= this.matrix.length-1) {
       if (this.matrix[counter][0].slice(0, 2) >= 20 || counter === this.matrix.length-1) {
-        this.state.lastDaytimePosition.setState(counter);
+        this.state.lastDaytimePosition = counter;
         break;
       } else {
         counter++;
@@ -265,18 +268,18 @@ export class Chart extends React.Component {
     const returnedValues = this.dataTimeScaleBuilder(this.state.timeScaleNow, 'Temperatura');
 
     if (this.state.isTempActive) {
-      this.state.chartData.datasets[0].data.setState([]);
-      this.state.chartData.datasets[0].backgroundColor.setState([]);
+      this.state.chartData.datasets[0].data = [];
+      this.state.chartData.datasets[0].backgroundColor = [];
     } else {
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[0].data.setState(returnedValues[1]);
-      this.state.chartData.datasets[0].backgroundColor.setState(['rgba(255, 0, 0, 0.5)']);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[0].data = returnedValues[1];
+      this.state.chartData.datasets[0].backgroundColor = ['rgba(255, 0, 0, 0.5)'];
     }
 
-    this.state.isTempActive.setState(!this.state.isTempActive);
+    this.state.isTempActive = !this.state.isTempActive;
 
     if (this.state.isTempActive === false && this.state.isHumiActive === false && this.state.isUVActive === false) {
-      this.state.chartData.labels.setState([]);
+      this.state.chartData.labels = [];
     }
 
     this.forceUpdate();
@@ -285,20 +288,20 @@ export class Chart extends React.Component {
     const returnedValues = this.dataTimeScaleBuilder(this.state.timeScaleNow, 'Umidade');
 
     if (this.state.isHumiActive) {
-      this.state.chartData.datasets[1].data.setState([]);
-      this.state.chartData.datasets[1].backgroundColor.setState([]);
+      this.state.chartData.datasets[1].data = [];
+      this.state.chartData.datasets[1].backgroundColor = [];
     } else {
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[1].data.setState(returnedValues[1]);
-      this.state.chartData.datasets[1].backgroundColor.setState(['rgba(0, 0, 255, 0.5)']);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[1].data = returnedValues[1];
+      this.state.chartData.datasets[1].backgroundColor = ['rgba(0, 0, 255, 0.5)'];
     }
 
-    this.state.dataNow.setState('Umidade');
+    this.state.dataNow = 'Umidade';
 
-    this.state.isHumiActive.setState(!this.state.isHumiActive);
+    this.state.isHumiActive = !this.state.isHumiActive;
 
     if (this.state.isTempActive === false && this.state.isHumiActive === false && this.state.isUVActive === false) {
-      this.state.chartData.labels.setState([]);
+      this.state.chartData.labels = [];
     }
 
     this.forceUpdate();
@@ -307,20 +310,20 @@ export class Chart extends React.Component {
     const returnedValues = this.dataTimeScaleBuilder(this.state.timeScaleNow, 'UV')
 
     if (this.state.isUVActive) {
-      this.state.chartData.datasets[2].data.setState([]);
-      this.state.chartData.datasets[2].backgroundColor.setState([]);
+      this.state.chartData.datasets[2].data = [];
+      this.state.chartData.datasets[2].backgroundColor = [];
     } else {
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[2].data.setState(returnedValues[1]);
-      this.state.chartData.datasets[2].backgroundColor.setState(['rgba(192, 0, 255, 0.5)']);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[2].data = returnedValues[1];
+      this.state.chartData.datasets[2].backgroundColor = ['rgba(192, 0, 255, 0.5)'];
     }
 
-    this.state.dataNow.setState('UV');
+    this.state.dataNow = 'UV';
 
-    this.state.isUVActive.setState(!this.state.isUVActive);
+    this.state.isUVActive = !this.state.isUVActive;
 
     if (this.state.isTempActive === false && this.state.isHumiActive === false && this.state.isUVActive === false) {
-      this.state.chartData.labels.setState([]);
+      this.state.chartData.labels = [];
     }
 
     this.forceUpdate();
@@ -330,30 +333,30 @@ export class Chart extends React.Component {
     if (this.state.isTempActive) {
       const returnedValues = this.dataTimeScaleBuilder('30s', 'Temperatura');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[0].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[0].data = returnedValues[1];
     }
     if (this.state.isHumiActive) {
       const returnedValues = this.dataTimeScaleBuilder('30s', 'Umidade');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[1].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[1].data = returnedValues[1];
     }
     if (this.state.isUVActive) {
       const returnedValues = this.dataTimeScaleBuilder('30s', 'UV');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[2].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[2].data = returnedValues[1];
     }
 
-    this.state.is30sActive.setState(true);
-    this.state.is1mActive.setState(false);
-    this.state.is5mActive.setState(false);
-    this.state.is15mActive.setState(false);
-    this.state.is30mActive.setState(false);
-    this.state.is1hActive.setState(false);
+    this.state.is30sActive = true;
+    this.state.is1mActive = false;
+    this.state.is5mActive = false;
+    this.state.is15mActive = false;
+    this.state.is30mActive = false;
+    this.state.is1hActive = false;
 
-    this.state.timeScaleNow.setState('30s');
+    this.state.timeScaleNow = '30s';
 
     this.forceUpdate();
   }
@@ -361,30 +364,30 @@ export class Chart extends React.Component {
     if (this.state.isTempActive) {
       const returnedValues = this.dataTimeScaleBuilder('1m', 'Temperatura');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[0].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[0].data = returnedValues[1];
     }
     if (this.state.isHumiActive) {
       const returnedValues = this.dataTimeScaleBuilder('1m', 'Umidade');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[1].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[1].data = returnedValues[1];
     }
     if (this.state.isUVActive) {
       const returnedValues = this.dataTimeScaleBuilder('1m', 'UV');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[2].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[2].data = returnedValues[1];
     }
 
-    this.state.is30sActive.setState(false);
-    this.state.is1mActive.setState(true);
-    this.state.is5mActive.setState(false);
-    this.state.is15mActive.setState(false);
-    this.state.is30mActive.setState(false);
-    this.state.is1hActive.setState(false);
+    this.state.is30sActive = false;
+    this.state.is1mActive = true;
+    this.state.is5mActive = false;
+    this.state.is15mActive = false;
+    this.state.is30mActive = false;
+    this.state.is1hActive = false;
 
-    this.state.timeScaleNow.setState('1m');
+    this.state.timeScaleNow = '1m';
 
     this.forceUpdate();
   }
@@ -392,30 +395,30 @@ export class Chart extends React.Component {
     if (this.state.isTempActive) {
       const returnedValues = this.dataTimeScaleBuilder('5m', 'Temperatura');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[0].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[0].data = returnedValues[1];
     }
     if (this.state.isHumiActive) {
       const returnedValues = this.dataTimeScaleBuilder('5m', 'Umidade');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[1].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[1].data = returnedValues[1];
     }
     if (this.state.isUVActive) {
       const returnedValues = this.dataTimeScaleBuilder('5m', 'UV');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[2].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[2].data = returnedValues[1];
     }
 
-    this.state.is30sActive.setState(false);
-    this.state.is1mActive.setState(false);
-    this.state.is5mActive.setState(true);
-    this.state.is15mActive.setState(false);
-    this.state.is30mActive.setState(false);
-    this.state.is1hActive.setState(false);
+    this.state.is30sActive = false;
+    this.state.is1mActive = false;
+    this.state.is5mActive = true;
+    this.state.is15mActive = false;
+    this.state.is30mActive = false;
+    this.state.is1hActive = false;
 
-    this.state.timeScaleNow.setState('5m');
+    this.state.timeScaleNow = '5m';
 
     this.forceUpdate();
   }
@@ -423,30 +426,30 @@ export class Chart extends React.Component {
     if (this.state.isTempActive) {
       const returnedValues = this.dataTimeScaleBuilder('15m', 'Temperatura');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[0].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[0].data = returnedValues[1];
     }
     if (this.state.isHumiActive) {
       const returnedValues = this.dataTimeScaleBuilder('15m', 'Umidade');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[1].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[1].data = returnedValues[1];
     }
     if (this.state.isUVActive) {
       const returnedValues = this.dataTimeScaleBuilder('15m', 'UV');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[2].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[2].data = returnedValues[1];
     }
 
-    this.state.is30sActive.setState(false);
-    this.state.is1mActive.setState(false);
-    this.state.is5mActive.setState(false);
-    this.state.is15mActive.setState(true);
-    this.state.is30mActive.setState(false);
-    this.state.is1hActive.setState(false);
+    this.state.is30sActive = false;
+    this.state.is1mActive = false;
+    this.state.is5mActive = false;
+    this.state.is15mActive = true;
+    this.state.is30mActive = false;
+    this.state.is1hActive = false;
 
-    this.state.timeScaleNow.setState('15m');
+    this.state.timeScaleNow = '15m';
 
     this.forceUpdate();
   }
@@ -454,30 +457,30 @@ export class Chart extends React.Component {
     if (this.state.isTempActive) {
       const returnedValues = this.dataTimeScaleBuilder('30m', 'Temperatura');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[0].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[0].data = returnedValues[1];
     }
     if (this.state.isHumiActive) {
       const returnedValues = this.dataTimeScaleBuilder('30m', 'Umidade');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[1].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[1].data = returnedValues[1];
     }
     if (this.state.isUVActive) {
       const returnedValues = this.dataTimeScaleBuilder('30m', 'UV');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[2].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[2].data = returnedValues[1];
     }
 
-    this.state.is30sActive.setState(false);
-    this.state.is1mActive.setState(false);
-    this.state.is5mActive.setState(false);
-    this.state.is15mActive.setState(false);
-    this.state.is30mActive.setState(true);
-    this.state.is1hActive.setState(false);
+    this.state.is30sActive = false;
+    this.state.is1mActive = false;
+    this.state.is5mActive = false;
+    this.state.is15mActive = false;
+    this.state.is30mActive = true;
+    this.state.is1hActive = false;
 
-    this.state.timeScaleNow.setState('30m');
+    this.state.timeScaleNow = '30m';
 
     this.forceUpdate();
   }
@@ -485,30 +488,30 @@ export class Chart extends React.Component {
     if (this.state.isTempActive) {
       const returnedValues = this.dataTimeScaleBuilder('1h', 'Temperatura');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[0].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[0].data = returnedValues[1];
     }
     if (this.state.isHumiActive) {
       const returnedValues = this.dataTimeScaleBuilder('1h', 'Umidade');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[1].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[1].data = returnedValues[1];
     }
     if (this.state.isUVActive) {
       const returnedValues = this.dataTimeScaleBuilder('1h', 'UV');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[2].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[2].data = returnedValues[1];
     }
 
-    this.state.is30sActive.setState(false);
-    this.state.is1mActive.setState(false);
-    this.state.is5mActive.setState(false);
-    this.state.is15mActive.setState(false);
-    this.state.is30mActive.setState(false);
-    this.state.is1hActive.setState(true);
+    this.state.is30sActive = false;
+    this.state.is1mActive = false;
+    this.state.is5mActive = false;
+    this.state.is15mActive = false;
+    this.state.is30mActive = false;
+    this.state.is1hActive = true;
 
-    this.state.timeScaleNow.setState('1h');
+    this.state.timeScaleNow = '1h';
 
     this.forceUpdate();
   }
@@ -517,29 +520,29 @@ export class Chart extends React.Component {
     if (this.state.isTempActive) {
       const returnedValues = this.dataTimeScaleBuilder(this.state.timeScaleNow, 'Temperatura');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[0].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[0].data = returnedValues[1];
 
-      this.state.chartData.datasets[0].label.setState('Temperatura');
-      this.state.chartData.datasets[0].backgroundColor.setState(['rgba(255, 0, 0, 0.5)']);
+      this.state.chartData.datasets[0].label = 'Temperatura';
+      this.state.chartData.datasets[0].backgroundColor = ['rgba(255, 0, 0, 0.5)'];
     }
     if(this.state.isHumiActive) {
       const returnedValues = this.dataTimeScaleBuilder(this.state.timeScaleNow, 'Umidade');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[1].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[1].data = returnedValues[1];
 
-      this.state.chartData.datasets[1].label.setState('Umidade');
-      this.state.chartData.datasets[1].backgroundColor.setState(['rgba(0, 0, 255, 0.5)']);
+      this.state.chartData.datasets[1].label = 'Umidade';
+      this.state.chartData.datasets[1].backgroundColor = ['rgba(0, 0, 255, 0.5)'];
     }
     if (this.state.isUVActive) {
       const returnedValues = this.dataTimeScaleBuilder(this.state.timeScaleNow, 'UV');
 
-      this.state.chartData.labels.setState(returnedValues[0]);
-      this.state.chartData.datasets[2].data.setState(returnedValues[1]);
+      this.state.chartData.labels = returnedValues[0];
+      this.state.chartData.datasets[2].data = returnedValues[1];
 
-      this.state.chartData.datasets[2].label.setState('Índice UV');
-      this.state.chartData.datasets[2].backgroundColor.setState(['rgba(192, 0, 255, 0.5)']);
+      this.state.chartData.datasets[2].label = 'Índice UV';
+      this.state.chartData.datasets[2].backgroundColor = ['rgba(192, 0, 255, 0.5)'];
     }
 
     this.forceUpdate();
@@ -552,7 +555,7 @@ export class Chart extends React.Component {
     return(
       <div>
         <div width="10%">
-          <table align="center">
+          <table>
             <thead>
               <tr>
                 <th colSpan="3">Medida</th>

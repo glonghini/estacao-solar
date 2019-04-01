@@ -2,9 +2,11 @@ import React from 'react';
 
 export class Camera extends React.Component {
   cameraRefresh = () => {
-    console.log('a');
     this.forceUpdate();
-    setTimeout(this.cameraRefresh, 30*1000);
+    setInterval(this.cameraRefresh, 30*1000);
+  }
+  componentDidMount(){
+    this.cameraRefresh();
   }
   render(){
     return(<div className="camera">
