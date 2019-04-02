@@ -69,6 +69,9 @@ export class TempHumi extends React.Component {
         <legend>Temperatura e Umidade</legend>
    	    <table>
           <thead>
+            <col width="20%"></col>
+            <col width="40%"></col>
+            <col width="40%"></col>
             <tr>
          		  <td></td>
          		  <th>Estação</th>
@@ -77,17 +80,17 @@ export class TempHumi extends React.Component {
           </thead>
           <tbody>
          	  <tr>
-         		  <th><img src="../images/thermometer.png" width="50%" alt="thermometer icon"/></th>
+         		  <th><img src="../images/thermometer.png" alt="thermometer icon"/></th>
          		  <td>{this.state.temperatura_SEL}</td>
          		  <td>{this.state.temperatura_CT}</td>
          	  </tr>
          	  <tr>
-         		  <th><img src="../images/humidity.png" width="50%" alt="humidity icon"/></th>
+         		  <th><img src="../images/humidity.png" alt="humidity icon"/></th>
          		  <td>{this.state.umidade_SEL}</td>
          		  <td>{this.state.umidade_CT}</td>
          	  </tr>
             <tr>
-         		  <th><img src="../images/rain.png" width="50%" alt="rain icon"/></th>
+         		  <th><img src="../images/rain.png" alt="rain icon"/></th>
          		  <td>{this.state.chuva_SEL}</td>
          		  <td></td>
          	  </tr>

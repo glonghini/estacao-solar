@@ -6,12 +6,12 @@ export const WeatherForecastComponent = (props) => {
       <h3>{props.cidade}, {props.data}</h3>
     </div>
     <div className="weather-two">
-      <table align="center">
+      <table>
         <tbody>
           <tr>
-            <td><img src={props.iconManha} width="50%" alt="morning weather forecast"/></td>
-            <td><img src={props.iconTarde} width="50%" alt="afternoon weather forecast"/></td>
-            <td><img src={props.iconNoite} width="50%" alt="night weather forecast"/></td>
+            <td><img src={props.iconManha} alt="morning weather forecast"/></td>
+            <td><img src={props.iconTarde} alt="afternoon weather forecast"/></td>
+            <td><img src={props.iconNoite} alt="night weather forecast"/></td>
           </tr>
           <tr>
             <td>Manhã</td>
@@ -26,10 +26,10 @@ export const WeatherForecastComponent = (props) => {
       <table align="center">
         <thead>
           <tr>
-            <th><img src="../images/rain.png" width="50%" alt="rain icon"/></th>
-            <th><img src="../images/humidity.png" width="50%" alt="humidity icon"/></th>
-            <th><img src="../images/thermometer.png" width="50%" alt="thermometer icon"/></th>
-            <th><img src="../images/wind.png" width="50%" alt="wind icon"/></th>
+            <th><img src="../images/rain.png" alt="rain icon"/></th>
+            <th><img src="../images/humidity.png" alt="humidity icon"/></th>
+            <th><img src="../images/thermometer.png" alt="thermometer icon"/></th>
+            <th><img src="../images/wind.png" alt="wind icon"/></th>
           </tr>
         </thead>
         <tbody>

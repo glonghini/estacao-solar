@@ -5,7 +5,7 @@ export class UVIndex extends React.Component {
     if (this.props.uv_sel <= 1){
       return(<div className='box-uv uv-index-1'>
           <span>{this.props.uv_sel}</span>
-          <h5><span>Baixo</span></h5>
+          <h5>Baixo</h5>
         </div>
       );
     }
@@ -32,8 +32,8 @@ export class UVIndex extends React.Component {
     }
     if (this.props.uv_sel === 5){
       return(<div className='box-uv uv-index-5'>
-          <span>{this.props.uv_sel}</span>
-          <h5><span>Médio</span></h5>
+          <div className="uv-index-number">{this.props.uv_sel}</div>
+          <div className="uv-index-level">Médio</div>
         </div>
       );
     }
