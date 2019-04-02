@@ -14,9 +14,9 @@ export const WeatherForecastComponent = (props) => {
             <td><img src={props.iconNoite} alt="night weather forecast"/></td>
           </tr>
           <tr>
-            <td>Manhã</td>
-            <td>Tarde</td>
-            <td>Noite</td>
+            <td><h3>Manhã</h3></td>
+            <td><h3>Tarde</h3></td>
+            <td><h3>Noite</h3></td>
           </tr>
         </tbody>
       </table>

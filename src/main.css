@@ -21,7 +21,7 @@ table {
 th {
   font-family: Arial;
   text-align: center;
-  font-size: 2vh;
+  font-size: 16px;
   font-weight: lighter;
   background: #B8C9FE;
 }
@@ -29,11 +29,9 @@ th {
 th, td {
   font-family: Arial;
   text-align: center;
-  font-size: 2vh;
+  font-size: 16px;
   font-weight: lighter;
-  padding: 1%;
 }
-
 
 th img, td img {
   height: 5vh;
@@ -42,7 +40,7 @@ th img, td img {
 h2, legend {
   font-family: Arial;
   font-weight: bold;
-  font-size: 2.5vh;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -60,15 +58,15 @@ fieldset {
 
 h3 {
   font-family: Arial;
-  font-size: 2vh;
+  font-size: 14px;
   text-align: center;
-  padding: 2vh;
+  padding: 1vw;
   margin: auto;
 }
 
 h4 {
   font-family: Arial;
-  font-size: 1.5vh;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -83,7 +81,7 @@ span {
 
 /*span e h5 reservados para o indice uv*/
 
-aviso {
+.aviso {
   animation: layerize cubic-bezier(0.4, 0, 0.2, 1) 700ms 200ms infinite alternate;
   opacity: 0;
   width: 100%;
@@ -113,33 +111,23 @@ aviso {
   color: Black;
   border: 1px;
   text-align: center;
-  font-size: 2vh;
+  font-size: 14px;
   transition-duration: 0.2s;
   width: 100%;
   height: 100%;
 }
 
 .button:hover {
-  background-color: Blue;
+  background-color: RoyalBlue;
   border: 2px;
   color: Black;
-}
-
-.button-checked {
-  color: Blue;
-  font-size: 3vh;
-}
-
-.button-unchecked {
-  color: White;
-  font-size: 2vh;
 }
 
 .button-time-chart {
   background-color: LightBlue;
   border: 1px;
   text-align: center;
-  font-size: 2vh;
+  font-size: 16px;
   transition-duration: 0.2s;
   width: 100%;
   padding: 2px;
@@ -149,7 +137,7 @@ aviso {
   background-color: rgba(255, 0, 0, 0.5);
   border: 1px;
   text-align: center;
-  font-size: 2vh;
+  font-size: 16px;
   transition-duration: 0.2s;
   width: 100%;
   padding: 2px;
@@ -159,7 +147,7 @@ aviso {
   background-color: rgba(0, 0, 255, 0.5);
   border: 1px;
   text-align: center;
-  font-size: 2vh;
+  font-size: 16px;
   transition-duration: 0.2s;
   width: 100%;
   padding: 2px;
@@ -169,14 +157,10 @@ aviso {
   background-color: rgba(192, 0, 255, 0.5);
   border: 1px;
   text-align: center;
-  font-size: 2vh;
+  font-size: 16px;
   transition-duration: 0.2s;
   width: 100%;
   padding: 2px;
-}
-
-.camera {
-  height: 45vh;
 }
 
 .gate {
@@ -210,6 +194,7 @@ aviso {
 
 .logo {
   position: absolute;
+  display: block;
   left: 4%;
   top: 2vh;
 }
@@ -230,6 +215,7 @@ aviso {
   padding: 0px;
   margin: 0px 0px;
   width: 50%;
+  height: 40%;
 }
 
 .box-1 {
@@ -248,17 +234,17 @@ aviso {
 }
 
 .box-4 {
-  top: 2vh;
+  top: 2%;
   right: 3%;
 }
 
 .box-5 {
-  top: 52vh;
+  top: 47.5%;
   right: 3%;
 }
 
 .box-6 {
-  top: 75%;
+  top: 65%;
   right: 3%;
 }
 
@@ -269,7 +255,7 @@ aviso {
 
 .box-camera {
   background-color: Black;
-  top: 1vw;
+  top: 2.5%;
   left: 25%;
 }
 
@@ -400,7 +386,7 @@ text-shadow:     0 1px 0 hsl(174,5%,80%),
 .chart {
   position: center;
   width: 45vw;
-  height: 15vw;
+  height: 12vw;
 }
 
 .efeito {

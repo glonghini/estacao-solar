@@ -69,9 +69,6 @@ export class TempHumi extends React.Component {
         <legend>Temperatura e Umidade</legend>
    	    <table>
           <thead>
-            <col width="20%"></col>
-            <col width="40%"></col>
-            <col width="40%"></col>
             <tr>
          		  <td></td>
          		  <th>Estação</th>

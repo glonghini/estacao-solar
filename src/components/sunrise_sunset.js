@@ -89,8 +89,8 @@ export class SunriseSunset extends React.Component {
   }
   updateWidgets = (gateOpen, gateDaytime, gateRain, lensExpositionTime) => {
     ReactDOM.render(<Gate
-      open={true}
-      daytime={true}
+      open={gateOpen}
+      daytime={gateDaytime}
       rain={gateRain}
       />,
       document.getElementById('gate')

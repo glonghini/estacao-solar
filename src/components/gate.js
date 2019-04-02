@@ -7,7 +7,7 @@ export const Gate = (props) => {
     if (props.daytime === false) {
       return(<div>
 		<div className="box-alerta-gate">
-          <aviso>!</aviso>
+          <div className="aviso">!</div>
           </div>
 		<h3>"Portão aberto durante a noite</h3>
         <div className="gate gate-open">
@@ -24,7 +24,7 @@ export const Gate = (props) => {
       if (props.rain) {
         return(<div>
 		      <div className="box-alerta-gate">
-            <aviso>!</aviso>
+            <div className="aviso">!</div>
           </div>
 		      <h3>Portão fechado durante o dia por causa da chuva</h3>
           <div className="gate gate-closed">
@@ -37,7 +37,7 @@ export const Gate = (props) => {
       if (props.rain === false) {
         return(<div>
           <div className="box-alerta-gate">
-            <aviso>!</aviso>
+            <div className="aviso">!</div>
           </div>
 		      <h3>Portão fechado durante o dia</h3>
           <div className="gate gate-closed">
