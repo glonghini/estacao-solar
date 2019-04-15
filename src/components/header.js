@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const Header = () => {
+export const PageHeader = () => {
   return (
-    <div className='logo'>
+    <header>
       <a href="http://www.sel.eesc.usp.br/lio/" target="_blank" rel="noopener noreferrer">
-        <img src="../images/lab_ocular.png" width="14%" alt="LIO logo"/>
+        <img className='header' src="../images/lab_ocular_portrait.png" alt="LIO logo"/>
       </a>
-    </div>
+    </header>
   );
 }

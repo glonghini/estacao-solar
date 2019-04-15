@@ -15,7 +15,7 @@ export class Camera extends React.Component {
   }
   render(){
     return(
-      <div className="camera">
+      <div className='camera-image'>
         <img
         src={this.state.cameraLink}
         width="100%"

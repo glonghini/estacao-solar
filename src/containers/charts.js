@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import {Line} from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
-import {ChartComponent} from '../components/charts.js';
+import { ChartComponent } from '../components/charts.js';
 
 export class Chart extends React.Component {
   state = {

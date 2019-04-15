@@ -1,12 +1,22 @@
 html {
   height: 100%;
-  margin: auto;
   text-rendering: optimizeLegibility;
 }
 
 body {
   margin: auto;
   text-rendering: optimizeLegibility;
+  background: linear-gradient(0.5turn, #B9C9FB, #ebf8e1, #FBF3B9);
+}
+
+header {
+  background-color: #B8C9FE;
+  height: 5%;
+}
+
+img.header {
+  width: 210px;
+  height: 70px;
 }
 
 table {
@@ -37,13 +47,6 @@ th img, td img {
   height: 5vh;
 }
 
-h2, legend {
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-}
-
 legend {
 	color: black;
 	text-shadow: 4px 4px 3px rgba(150, 150, 150, 1);
@@ -56,12 +59,28 @@ fieldset {
   box-shadow: 7px 7px 20px 0px  rgba(0,0,0,0.3);
 }
 
+h1 {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+h2 {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid Black;
+  border-radius: 10px;
+  padding: 1%;
+  background-color: #FBF3B9;
+}
+
 h3 {
   font-family: Arial;
   font-size: 14px;
   text-align: center;
-  padding: 1vw;
-  margin: auto;
 }
 
 h4 {
@@ -90,7 +109,7 @@ span {
   cursor: default;
   user-select: none;
   text-align: center;
-  font-size: 8vw;
+  font-size: 16vh;
 }
 
 @keyframes layerize {
@@ -163,6 +182,13 @@ span {
   padding: 2px;
 }
 
+.camera-image {
+  position: relative;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+}
+
 .gate {
   border-radius: 8px;
   padding: 0.5vw;
@@ -190,73 +216,6 @@ span {
   border-radius: 8px;
   background-color: #ff0099;
   align: center;
-}
-
-.logo {
-  position: absolute;
-  display: block;
-  left: 4%;
-  top: 2vh;
-}
-
-.side-box-properties {
-  text-align: center;
-  display: block;
-  position: absolute;
-  padding: 0px;
-  margin: 0px 0px;
-  width: 20%;
-}
-
-.center-box-properties {
-  text-align: center;
-  display: block;
-  position: absolute;
-  padding: 0px;
-  margin: 0px 0px;
-  width: 50%;
-  height: 40%;
-}
-
-.box-1 {
-  top: 17.5%;
-  left: 3%;
-}
-
-.box-2 {
-  top: 50%;
-  left: 3%;
-}
-
-.box-3 {
-  top: 80%;
-  left: 3%;
-}
-
-.box-4 {
-  top: 2%;
-  right: 3%;
-}
-
-.box-5 {
-  top: 47.5%;
-  right: 3%;
-}
-
-.box-6 {
-  top: 65%;
-  right: 3%;
-}
-
-.box-7 {
-  bottom: 2.5%;
-  right: 25%;
-}
-
-.box-camera {
-  background-color: Black;
-  top: 2.5%;
-  left: 25%;
 }
 
 .box-alerta-gate {
@@ -289,7 +248,7 @@ text-shadow:     0 1px 0 hsl(174,5%,80%),
  padding-bottom: 2%;
 }
 
-/*boxes do indice uv para aplicar condicionais*/
+/*Índice UV*/
 
 .box-uv{
   position: relative;
@@ -359,49 +318,51 @@ text-shadow:     0 1px 0 hsl(174,5%,80%),
   background-color: #998cff;
 }
 
-/*Previsão do tempo*/
-
-.weather-one {
-  background-color: #B9C9FB;
-  border-radius: 8px;
-  position: relative;
-  width: 100%;
-  height: 25%;
-  padding: 0px;
-  margin: 0px 0px;
-}
-
-.weather-two {
-  position: relative;
-  width: 100%;
-  height: 25%;
-}
-
-.weather-three {
-  position: relative;
-  width: 100%;
-  height: 50%;
-}
-
 .chart {
-  position: center;
-  width: 45vw;
-  height: 12vw;
+  width: 100%;
+  height: 24vh;
 }
 
 .efeito {
-	color: #fff;
+	color: White;
 	padding: 2%;
-	font-size: 1.5vw;
+	font-size: 32px;
 	font-weight: bold;
 	font-family: Helvetica;
 	text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-}
-
-#grad {
-  background: linear-gradient(0.5turn, #B9C9FB, #ebf8e1, #FBF3B9);
+  text-align: center;
 }
 
 #grad-alert-days {
   background: Yellow;
+}
+
+.left-box {
+  position: absolute;
+  top: 90px;
+  left: 2%;
+  background-color: White;
+  width: 20%;
+  padding: 0.5%;
+  border-radius: 12px;
+}
+
+.center-box {
+  position: absolute;
+  top: 90px;
+  left: 24.5%;
+  background-color: White;
+  width: 50%;
+  padding: 0.5%;
+  border-radius: 12px;
+}
+
+.right-box {
+  position: absolute;
+  top: 90px;
+  right: 2%;
+  background-color: White;
+  width: 20%;
+  padding: 0.5%;
+  border-radius: 12px;
 }
