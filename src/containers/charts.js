@@ -157,10 +157,11 @@ export class Chart extends React.Component {
     const myArray = myString.split('\t');
 
     //criamos vetores de 10 posições, que é o número de colunas da matrix da API, cada posição sendo uma string, os valores
-    var counter, chunk = 12;
+    var counter, chunk = 10;
     for (counter = 0; counter < myArray.length; counter += chunk) {
       this.state.dataMatrixUV.push(myArray.slice(counter, counter + chunk));
     }
+    console.log(this.state.dataMatrixUV);
   }
   //função para criar os vetores com os dados a serem mostrados de acordo com a escala de tempo
   dataTimeScaleBuilder = (timeScale, dataName) => {
