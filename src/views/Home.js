@@ -48,7 +48,7 @@ export class Home extends React.Component {
   }
   requestClimatempo = () => {
   //Fetch da API do Climatempo
-    axios.get('http://apiadvisor.climatempo.com.br/api/v1/weather/locale/3680/current?token=2e30b5793b0c662d9b901520663bd4d0')
+    axios.get('https://apiadvisor.climatempo.com.br/api/v1/weather/locale/3680/current?token=2e30b5793b0c662d9b901520663bd4d0')
       .then(response => {
         console.log(response.data);
         this.setState(
@@ -110,7 +110,7 @@ export class Home extends React.Component {
   }
   requestTodayWeatherForecast = () =>{
     //utilizando o método get para pegar os dados da API do climatempo
-    axios.get('http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/3680/days/15?token=2e30b5793b0c662d9b901520663bd4d0')
+    axios.get('https://apiadvisor.climatempo.com.br/api/v1/forecast/locale/3680/days/15?token=2e30b5793b0c662d9b901520663bd4d0')
       .then(response => {
         console.log(response.data);
         this.setState(

@@ -2,11 +2,11 @@ import React from 'react';
 
 export class Camera extends React.Component {
   state = {
-    cameraLink: "http://143.107.235.2:8000/sensors/media"
+    cameraLink: ""
   }
   cameraRefresh = () => {
     this.setState({
-      cameraLink: "http://143.107.235.2:8000/sensors/media"
+      cameraLink: "http://143.107.235.2:8010/mjpeg/stream.cgi?chn=0?login=admin&password=1234567"
     });
     setInterval(this.cameraRefresh, 30*1000);
   }
