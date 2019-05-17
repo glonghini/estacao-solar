@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export class Camera extends React.Component {
   state = {
@@ -6,12 +7,23 @@ export class Camera extends React.Component {
   }
   cameraRefresh = () => {
     this.setState({
-      cameraLink: "http://143.107.235.2:8010/mjpeg/stream.cgi?chn=0?login=admin&password=1234567"
+      cameraLink: '',
+      cameraLink: "http://143.107.235.2:8000/sensors/media/"
     });
-    setInterval(this.cameraRefresh, 30*1000);
+    this.forceUpdate();
+    setTimeout(this.cameraRefresh, 30*1000);
   }
   componentDidMount(){
-    this.cameraRefresh();
+    axios.get("http://143.107.235.2:8000/sensors/media/")
+      .then(response => {
+        this.setState(
+          {
+          cameraLink: response.data
+          }
+        )
+        console.log(response.data);
+      }
+    );
   }
   render(){
     return(

@@ -161,7 +161,6 @@ export class Chart extends React.Component {
     for (counter = 0; counter < myArray.length; counter += chunk) {
       this.state.dataMatrixUV.push(myArray.slice(counter, counter + chunk));
     }
-    console.log(this.state.dataMatrixUV);
   }
   //função para criar os vetores com os dados a serem mostrados de acordo com a escala de tempo
   dataTimeScaleBuilder = (timeScale, dataName) => {
